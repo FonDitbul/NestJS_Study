@@ -15,7 +15,7 @@ export class MoviesController {
     getAll(): string {
         return 'This will return all movies';
     }
-
+    
     @Get("search")
     search(@Query("year") searchingYear: string ){
         return `WE are searching for a movie with a title made after : ${searchingYear} `
@@ -44,6 +44,4 @@ export class MoviesController {
             ...updateData
         }
     }
-
-
 }
