@@ -9,7 +9,7 @@ import {
   Put,
   UseFilters,
 } from '@nestjs/common';
-import { HttpExceptionFilter } from 'src/http-exception.filter';
+import { HttpExceptionFilter } from 'src/common/exceptions/http-exception.filter';
 import { CatsService } from './cats.service';
 
 @Controller('cats')
@@ -19,7 +19,7 @@ export class CatsController {
   @Get()
   @UseFilters(HttpExceptionFilter)
   getAllCat() {
-    throw new HttpException('api broken', 401);
+    // throw new HttpException('api broken', 401);
     return 'all cat';
   }
 
