@@ -2,6 +2,8 @@ import {
   Controller,
   Get,
   HttpException,
+  Param,
+  ParseIntPipe,
   Patch,
   Post,
   Put,
@@ -22,7 +24,8 @@ export class CatsController {
   }
 
   @Get(':id')
-  getOneCat() {
+  getOneCat(@Param('id', ParseIntPipe) param: number) {
+    console.log(param);
     return 'one cat';
   }
 
