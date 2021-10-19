@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { LoggerMiddleware } from './common/middlewares/logger.middleware';
 import * as mongoose from 'mongoose';
 import { CatsModule } from './cats/cats.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { CatsModule } from './cats/cats.module';
       // useFindAndModify: false,
     }),
     CatsModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
