@@ -3,8 +3,6 @@ import {
   Controller,
   Get,
   Post,
-  Req,
-  UploadedFile,
   UploadedFiles,
   UseFilters,
   UseGuards,

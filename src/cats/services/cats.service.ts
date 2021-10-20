@@ -10,8 +10,9 @@ export class CatsService {
 
   async getAllCat() {
     const allCat = await this.CatsRepository.findAll();
-    const readOnlyCats = allCat.map((cat) => cat.readOnlyData);
-    return readOnlyCats;
+    console.log(allCat);
+    // const readOnlyCats = allCat.map((cat) => cat.readOnlyData);
+    return allCat;
   }
 
   async signUp(body: CatRequestDto) {

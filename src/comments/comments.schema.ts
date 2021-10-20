@@ -1,7 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { IsString, IsNotEmpty, IsPositive, IsNumber } from 'class-validator';
-import { Document, SchemaOptions, Types } from 'mongoose';
+import { Document, SchemaOptions, Types, Mongoose } from 'mongoose';
 import { ApiProperty } from '@nestjs/swagger';
+// import * as mongoose from 'mongoose';
+
 const options: SchemaOptions = {
   timestamps: true,
 };
@@ -54,3 +56,5 @@ export class Comments extends Document {
 }
 
 export const CommentsSchema = SchemaFactory.createForClass(Comments);
+
+// export const commentsModel = Mongoose('comments', CommentsSchema);
