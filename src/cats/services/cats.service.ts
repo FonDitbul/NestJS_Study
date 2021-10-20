@@ -8,6 +8,12 @@ import { Cat } from '../cats.schema';
 export class CatsService {
   constructor(private readonly CatsRepository: CatsRepository) {}
 
+  async getAllCat() {
+    const allCat = await this.CatsRepository.findAll();
+    const readOnlyCats = allCat.map((cat) => cat.readOnlyData);
+    return readOnlyCats;
+  }
+
   async signUp(body: CatRequestDto) {
     const { email, name, password } = body;
     const isCatExist = await this.CatsRepository.existByEmail(email);
