@@ -2,6 +2,8 @@ import { Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ChatsGateway } from './chats/chats.gateway';
+import { ChatsModule } from './chats/chats.module';
 import * as mongoose from 'mongoose';
 
 @Module({
@@ -15,6 +17,7 @@ import * as mongoose from 'mongoose';
             // useCreateIndex: true,
             // useFindAndModify: false,
         }),
+        ChatsModule,
     ],
     controllers: [AppController],
     providers: [],
