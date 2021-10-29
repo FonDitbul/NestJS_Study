@@ -8,7 +8,7 @@ const options: SchemaOptions = {
 };
 
 @Schema(options)
-export class Sockets extends Document {
+export class Socket extends Document {
     @Prop({
         unique: true,
         required: true,
@@ -25,4 +25,4 @@ export class Sockets extends Document {
     username: string;
 }
 
-export const SocketSchema = SchemaFactory.createForClass(Sockets);
+export const SocketSchema = SchemaFactory.createForClass(Socket);

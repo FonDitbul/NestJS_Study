@@ -1,7 +1,7 @@
 import { Schema, SchemaFactory, Prop } from '@nestjs/mongoose';
 import { IsNotEmpty, IsString } from 'class-validator';
 import { Document, SchemaOptions, Types } from 'mongoose';
-import { Sockets as SocketModel } from './sockets.model';
+import { Socket as SocketModel } from './sockets.model';
 
 const options: SchemaOptions = {
     collection: 'chattings',
